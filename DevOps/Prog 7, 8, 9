@@ -1,0 +1,130 @@
+=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+Prog 7                                                                                                                                                                          ||
+=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+
+# JDK Download:
+
+https://www.oracle.com/europe/java/technologies/downloads/
+
+JDK 25      Windows            x64 MSI Installer
+
+cmd: 
+>> java -version
+>> javac -version
+
+========================================================================================================================
+# Download Maven:
+----------------------------------------
+
+Search: Download Maven 
+            OR
+        https://maven.apache.org/download.cgi
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+|  Binary zip archive        	apache-maven-3.9.16-bin.zip	apache-maven-3.9.16-bin.zip.sha512	      apache-maven-3.9.16-bin.zip.asc         |     // click here
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+
+// Extract and place to:           LocalDisk(c:) > Program Files
+
+
+Windows: Edit Environment Variables                   // Not: Edit Environment Variable for your account
+
+Environment Variable
+
+Double click => Path
+
+New 
+
+{paste: path} c:\Program Files\apache-maven-3.9.15.bin\apache-maven-3.9.15\bin                   // copy the file path of the bin     and paste here
+
+add
+
+ok
+
+cmd: mvn -version
+
+======================================================================================================================================
+# Download Gradle:
+----------------------------------------
+
+Search: Download gradle
+            OR
+        https://gradle.org/releases/
+
+------------------------------------------------------------
+|       9.5.0                                              |
+|      Apr 28, 2026                                        |
+|                                                          |    
+|          Download: binary-only or complete (checksums)   |   //click here
+|          User Manual                                     |
+|          API Javadoc                                     |
+|          Kotlin DSL Reference                            |
+|          Groovy DSL Reference                            |
+|          Release Notes                                   |
+|                                                          |
+------------------------------------------------------------
+
+// Extract and place to:           LocalDisk(c:) > Program Files
+
+
+Windows: Edit Environment Variables                   // Not: Edit Environment Variable for your account
+
+Environment Variable
+
+Double click => Path
+
+New 
+
+{paste: path} C:\Program Files\gradle-9.5.0-bin\gradle-9.5.0\bin                  // copy the file path of the bin      and paste here
+
+add
+
+ok
+
+cmd: gradle -version
+
+=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+Prog 8           and         Prog 9                                                                                                                                             ||
+=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+
+cmd:
+>> mvn archetype:generate
+
+choose a number or apply filter: 2346 : 2346                   OR             maven-archetype-quickstart
+choose a number or apply filter: 9 : 9
+<< ENTER >>
+choose a number: 4 : 4
+<< ENTER >>
+
+Define value for property "groupId" : com.example
+Define value for property "artifactId" : my-new-app
+Define value for property "package" : << ENTER >>
+Define value for property "projectName" : << ENTER >>
+
+y: 
+<< ENTER >>
+
+>> cd my-new-app
+>> mvn compile
+>> notepad pom.xml
+
+
+---[ pom.xml ]----------------------------------------
+
+          <configuration>
+        	   <mainClass>com.example.app</mainClass>
+        	</configuration>
+
+          </plugin>
+        </plugins>
+
+------------------------------------------------------
+
+=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+Prog 8 completed                                                                                                                                                                ||
+=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+
+
+>> mvn compile
+>> mvn exec:java -Dexec.mainClass="com.example.App"
