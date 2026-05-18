@@ -1,0 +1,45 @@
+
+JDK Download:
+
+https://www.oracle.com/europe/java/technologies/downloads/
+
+JDK 25      Windows            x64 MSI Installer
+
+cmd: 
+>> java -version
+>> javac -version
+
+========================================
+
+https://www.jenkins.io/download/
+
+Windows        download MSI
+
+Local Port: 8080
+
+Folder name =>  c:\Program Files\Java\jdk.25.0.2
+
+browser:  http://localhost:8080
+
+-- initial admin password -- 
+>> c:\Program Data\Jenkins\.jenkins\secrets\initialAdminPassword            {copy: pass}
+
+Browser: 
+{paste: pass}
+bcuwqoccbf....               {copy: pass2}
+
+in localhost:8080 :
+-- Administrative Password --
+{paste: pass2}
+
+click => Install suggested Plugins 
+
+
+-- Create first Admin user --
+username: user1234
+password: user1234
+confirm password: user1234
+Full name:
+Email:
+
+
