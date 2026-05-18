@@ -1,0 +1,26 @@
+mkdir DockerComposeFile							                → Create folder
+
+cd DockerComposeFile							                → Open folder
+
+notepad docker-compose.yml						                → Create compose file
+
+---[ docker-compose.yml ]------
+
+services:
+  web:
+    image: nginx
+    ports:
+      - "9090:80"
+
+  database:
+    image: redis
+
+-----------------------------
+
+docker-compose config							                → Validate compose file
+
+docker-compose up -d							                → Start containers in background
+
+docker-compose ps							                → Show running containers
+
+Browse: localhost:9090							                → Open NGINX webpage
