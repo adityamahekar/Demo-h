@@ -1,0 +1,202 @@
+
+
+Docker:  https://www.docker.com/products/docker-desktop/?utm_source=chatgpt.com
+
+Docker Installation Guide for Windows
+
+1. Download Docker Desktop
+
+Open:
+
+[Docker Desktop Download Page](https://www.docker.com/products/docker-desktop/)
+
+Click:
+
+>> Download for Windows
+
+---
+
+2. Run Installer
+
+Open the downloaded `.exe` file.
+
+Keep these options checked:
+
+- ✅ Use WSL 2 instead of Hyper-V
+- ✅ Add shortcut to desktop
+
+Click:
+
+>> OK / Install
+
+---
+
+3. Restart Computer
+
+Restart if Docker asks.
+
+---
+
+4. Start Docker Desktop
+
+Open:
+
+- Docker Desktop
+
+Wait until:
+
+>> Docker Desktop is running
+
+appears.
+
+---
+
+5. Install WSL2 (If Required)
+
+Open PowerShell as Administrator
+
+Search:
+
+>> PowerShell
+
+Right-click → Run as Administrator
+
+---
+
+Install WSL
+
+PowerShell (Admin): >> wsl --install
+
+Wait for installation.
+
+Then restart your PC.
+
+---
+
+Check WSL Status
+
+PowerShell: >> wsl --status
+
+If working, you will see WSL information.
+
+---
+
+Set WSL2 Default
+
+PowerShell: >> wsl --set-default-version 2
+
+---
+
+6. Enable Required Windows Features
+
+Run these commands in Administrator PowerShell:
+
+PowerShell (Admin): >> dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+
+PowerShell (Admin): >> dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+
+Restart PC again.
+
+---
+
+7. Enable Virtualization in BIOS
+
+If WSL still fails:
+
+- Restart PC
+- Open BIOS/UEFI
+
+Enable:
+
+- Intel VT-x
+- AMD-V
+- Virtualization Technology
+
+Then save and restart.
+
+---
+
+8. Verify Docker Installation
+
+CMD / PowerShell: >> docker --version
+
+Example:
+
+>> Docker version 28.x.x
+
+---
+
+9. Test Docker
+
+CMD / PowerShell: >> docker run hello-world
+
+If Docker works, you will see a success message.
+
+---
+
+10. Run Ubuntu Container
+
+CMD / PowerShell: >> docker run -it ubuntu
+
+You will enter Ubuntu terminal:
+
+>> root@container-id:/#
+
+---
+
+11. Test WSL
+
+PowerShell / CMD: >> wsl
+
+or
+
+PowerShell / CMD: >> wsl -l -v
+
+=======================================================================================================
+
+=> Useful Docker Commands
+
+docker pull ubuntu						        → Download Ubuntu image
+
+docker run -it ubuntu						        → Run Ubuntu container
+
+---------------------------------------------------------------------------
+
+=> Basic Linux Commands Inside Docker Container
+
+ls									        → List files and folders
+
+pwd									        → Show current directory
+
+mkdir test								        → Create folder
+
+touch file.txt								        → Create file
+
+cat file.txt								        → Display file content
+
+echo "Hello" > file.txt						        → Write into file
+
+---------------------------------------------------------------------------
+
+exit									        → Exit container
+
+docker ps								        → Show running containers
+
+docker ps -a								        → Show all containers
+
+docker stop <container_id>					        → Stop container
+
+docker rm <container_id>					        → Remove container
+
+docker images								        → Show downloaded images
+
+docker rmi <image_name>						        → Remove image
+
+docker rmi -f <image_name>					        → Force remove image
+
+---------------------------------[ EXTRA ]----------------------------------------------
+docker start -ai <container_id>				        → Start existing container
+
+docker exec -it <container_id> bash			        → Open terminal inside container
+
+=========================================================================
