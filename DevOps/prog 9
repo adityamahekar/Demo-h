@@ -1,0 +1,77 @@
+Maven to Gradle Migration
+
+A. Using Maven 
+
+Migrate to Gradle
+
+Step 1: Install Gradle
+
+sudo dnf install gradle -y
+
+Check version:
+
+gradle -v
+
+Step 2: Create Gradle Project
+
+mkdir gradleapp && cd gradleapp
+
+mkdir -p src/main/java/com/example/gradleapp
+
+Step 3: Create App.java
+
+File: src/main/java/com/example/gradleapp/App.java
+
+package com.example.gradleapp;
+
+public class App {
+
+public static void main(String[] args) {
+
+    System.out.println("Hello from Gradle on Fedora!");
+
+}
+
+}
+
+Step 4: Create build.gradle
+
+plugins {
+
+id 'java'
+
+id 'application'
+
+}
+
+group = 'com.example.gradleapp'
+
+version = '1.0'
+
+sourceCompatibility = '1.8'
+
+repositories {
+
+mavenCentral()
+
+}
+
+dependencies {
+
+testImplementation 'junit:junit:4.13.2'
+
+}
+
+application {
+
+mainClass = 'com.example.gradleapp.App'
+
+}
+
+Step 5: Build the Gradle Project
+
+gradle build
+
+Step 6: Run the Application
+
+gradle run
