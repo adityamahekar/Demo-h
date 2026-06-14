@@ -1,77 +1,167 @@
-Maven to Gradle Migration
+# Gradle Java Application
 
-A. Using Maven 
+## 1. Create Project
 
-Migrate to Gradle
+---
 
-Step 1: Install Gradle
+```cmd
+mkdir gradleAppTemp
+cd gradleAppTemp
+```
 
-sudo dnf install gradle -y
+---
 
-Check version:
+## 2. Create `settings.gradle`
 
-gradle -v
+---
 
-Step 2: Create Gradle Project
+```cmd
+notepad settings.gradle
+```
 
-mkdir gradleapp && cd gradleapp
+---
 
-mkdir -p src/main/java/com/example/gradleapp
+Paste:
 
-Step 3: Create App.java
+---
 
-File: src/main/java/com/example/gradleapp/App.java
+```gradle
+rootProject.name = 'gradleAppTemp'
+```
 
-package com.example.gradleapp;
+---
 
-public class App {
+## 3. Create `build.gradle`
 
-public static void main(String[] args) {
+---
 
-    System.out.println("Hello from Gradle on Fedora!");
+```cmd
+notepad build.gradle
+```
 
-}
+---
 
-}
+Paste:
 
-Step 4: Create build.gradle
+---
 
+```gradle
 plugins {
-
-id 'java'
-
-id 'application'
-
+    id 'application'
 }
-
-group = 'com.example.gradleapp'
-
-version = '1.0'
-
-sourceCompatibility = '1.8'
 
 repositories {
-
-mavenCentral()
-
-}
-
-dependencies {
-
-testImplementation 'junit:junit:4.13.2'
-
+    mavenCentral()
 }
 
 application {
-
-mainClass = 'com.example.gradleapp.App'
-
+    mainClass = 'com.example.gradleApp.App'
 }
+```
 
-Step 5: Build the Gradle Project
+---
 
+## 4. Create Source Folder
+
+---
+
+```cmd
+mkdir src
+mkdir src\main
+mkdir src\main\java
+mkdir src\main\java\com
+mkdir src\main\java\com\example
+mkdir src\main\java\com\example\gradleApp
+```
+
+---
+
+## 5. Create `App.java`
+
+---
+
+```cmd
+notepad src\main\java\com\example\gradleApp\App.java
+```
+
+---
+
+Paste:
+
+---
+
+```java
+package com.example.gradleApp;
+
+public class App {
+    public static void main(String[] args) {
+        System.out.println("Hello Gradle");
+    }
+}
+```
+
+---
+
+## 6. Project Structure
+
+---
+
+```text
+gradleAppTemp
+│
+├── build.gradle
+├── settings.gradle
+└── src
+    └── main
+        └── java
+            └── com
+                └── example
+                    └── gradleApp
+                        └── App.java
+```
+
+---
+
+## 7. Build Project
+
+---
+
+```cmd
 gradle build
+```
 
-Step 6: Run the Application
+---
 
+Expected Output:
+
+---
+
+```text
+BUILD SUCCESSFUL
+```
+
+---
+
+## 8. Run Project
+
+---
+
+```cmd
 gradle run
+```
+
+---
+
+Expected Output:
+
+---
+
+```text
+> Task :run
+
+Hello Gradle
+
+BUILD SUCCESSFUL
+```
+
+---
