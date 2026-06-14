@@ -44,7 +44,7 @@ git pull origin main              // for merging the local repo from the remote 
 
 ------------------------------------------------------------------------
 
-git remote -v
+> git remote -v
 
 You'll probably see something like:
 
@@ -52,7 +52,7 @@ origin  https://github.com/adityaMahekar/Netflix_Clone.git
 
 Remove the incorrect remote:
 
-git remote remove origin
+> git remote remove origin
 
 Add the correct repository URL:
 
@@ -60,7 +60,7 @@ git remote add origin https://github.com/adityamahekar/stemp.git
 
 Verify:
 
-git remote -v
+> git remote -v
 
 Then push:
 
