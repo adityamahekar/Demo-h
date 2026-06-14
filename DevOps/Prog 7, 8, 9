@@ -113,7 +113,7 @@ y:
 ---[ pom.xml ]----------------------------------------
 
           <configuration>
-        	   <mainClass>com.example.app</mainClass>
+        	   <mainClass>com.example.App</mainClass>
         	</configuration>
 
           </plugin>
@@ -127,4 +127,8 @@ Prog 8 completed                                                                
 
 
 >> mvn compile
+>> mvn exec:java
+
+            OR
+
 >> mvn exec:java -Dexec.mainClass="com.example.App"
