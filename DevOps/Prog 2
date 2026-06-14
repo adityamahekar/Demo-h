@@ -40,3 +40,47 @@ git remote add origin https://github.com/adityamahekar/newrepo.git
 git push -u origin main
 
 git pull origin main              // for merging the local repo from the remote repository
+
+
+------------------------------------------------------------------------
+
+git remote -v
+
+You'll probably see something like:
+
+origin  https://github.com/adityaMahekar/Netflix_Clone.git
+
+Remove the incorrect remote:
+
+git remote remove origin
+
+Add the correct repository URL:
+
+git remote add origin https://github.com/adityamahekar/stemp.git
+
+Verify:
+
+git remote -v
+
+Then push:
+
+git push -u origin main
+
+If GitHub asks for authentication, use:
+
+Your GitHub username
+A Personal Access Token (PAT) instead of your password
+
+Also, note that you ran:
+
+git init
+
+inside:
+
+C:\Users\aditya
+
+which initialized a Git repository for your entire user folder. That's usually not what you want. Create a project folder and work inside it:
+
+mkdir stemp
+cd stemp
+git init
