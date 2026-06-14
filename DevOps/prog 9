@@ -19,13 +19,9 @@ cd gradleAppTemp
 notepad settings.gradle
 ```
 
----
 
-Paste:
 
----
-
-```gradle
+```settings.gradle
 rootProject.name = 'gradleAppTemp'
 ```
 
@@ -45,7 +41,7 @@ Paste:
 
 ---
 
-```gradle
+```build.gradle
 plugins {
     id 'application'
 }
@@ -66,13 +62,8 @@ application {
 ---
 
 ```cmd
-mkdir src
-mkdir src\main
 mkdir src\main\java
-mkdir src\main\java\com
-mkdir src\main\java\com\example
-mkdir src\main\java\com\example\gradleApp
-```
+
 
 ---
 
@@ -87,8 +78,6 @@ notepad src\main\java\com\example\gradleApp\App.java
 ---
 
 Paste:
-
----
 
 ```java
 package com.example.gradleApp;
