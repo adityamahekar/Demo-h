@@ -1,2 +1,11 @@
 Login to Github
 Fork The Program
+
+https://git-scm.com/install/windows?
+
+Click here to download the latest (2.54.0) x64 version of Git for Windows. This is the most recent maintained build. It was released almost 2 months ago, on 2026-04-20.
+
+git --version
+
+git config --global user.name "Your Name"
+git config --global user.email "your@email.com"
